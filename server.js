@@ -1,14 +1,23 @@
+// Dependencies
 const express = require("express");
 const app = express();
-require("dotenv").config();
-const port = process.env.PORT;
 
+
+// Middleware
+app.set("view engine", "ejs")
+// Models
+// Controllers
+// Views
+
+require("dotenv").config();
+
+// Route
 app.get("/", (req,res) => {
-    res.send("hiiiiiiii")
+    res.render("animals/index")
 })
 
 
 
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
+app.listen(process.env.PORT, () => {
+    console.log(`listening on PORT ${process.env.PORT}`)
 })
