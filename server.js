@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 
-
 // Middleware
 app.set("view engine", "ejs")
 // Models
@@ -11,11 +10,8 @@ app.set("view engine", "ejs")
 
 require("dotenv").config();
 
-// Route
-app.get("/", (req,res) => {
-    res.render("animals/index")
-})
-
+const animalsController = require("./controllers/animals")
+app.use("/animals", animalsController)
 
 
 app.listen(process.env.PORT, () => {
