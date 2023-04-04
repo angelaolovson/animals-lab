@@ -12,10 +12,11 @@
         <% for (animal of animals) { %>
 
             <a href="/animals/<%= animal._id%>"> <%= animal.species %> </a>
-
-          
         <% } %>
 
     </p>
+    <br>
+    <a href="/animals/new"><button>Create a new Animal</button></a>
+    <br>
 </body>
 </html>
