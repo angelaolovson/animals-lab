@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Show page animalssss by index</h1>
+    <h1>Each Animal</h1>
+    <div>Species: <%= animal.species %></div>
+    <div>Extinct: <%= animal.extinct %></div>
+    <div>Location: <%= animal.location %></div>
+    <div>Life Expectancy: <%= animal.lifeExpectancy %></div>
+
+    <br>
+    <form action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete"/>
+    </form>
+
+    <br>
+    <a href="/animals/<%= animal._id %>/edit"><button>Edit</button></a>
+    <br>
+    <br>
+    <a href="/animals/"><button>Back to Main</button></a>
 </body>
 </html>
