@@ -3,6 +3,10 @@ const express = require("express");
 const app = express();
 const methodOverride = require('method-override');
 require("dotenv").config();
+// Controllers
+const animalsRouter = require("./routers/animalsRouter")
+// Models
+// Views
 
 // Middleware
 app.set("view engine", "ejs")
@@ -11,12 +15,9 @@ app.use(express.urlencoded({extended: true})) // parse urlencoded request bodies
 app.use(express.static("public")) // serve files from public statically
 app.use(express.json());
 
-// Models
-// Views
 
-// Controllers
-const animalsController = require("./controllers/animals")
-app.use("/animals", animalsController)
+
+app.use("/animals", animalsRouter)
 
 
 app.listen(process.env.PORT, () => {
